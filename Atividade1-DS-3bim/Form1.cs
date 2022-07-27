@@ -17,9 +17,44 @@ namespace Atividade1_DS_3bim
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnIncluir_Click(object sender, EventArgs e)
         {
 
+            dgvAlunos.Rows.Add(txtNome.Text, txtCurso.Text);
+
+            txtNome.Clear();
+            txtCurso.Clear();
+
+            MessageBox.Show("Aluno Incluido com sucesso", "Inclusão",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            
+            lblTotal.Text = dgvAlunos.RowCount.ToString();
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (dgvAlunos.RowCount >0)
+            {
+                dgvAlunos.Rows.RemoveAt(dgvAlunos.CurrentCell.RowIndex);
+
+                MessageBox.Show("Aluno Excluido com sucesso", "Exclusão",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                lblTotal.Text = dgvAlunos.RowCount.ToString();
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void dgvAlunos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAlunos.RowCount > 0)
+            {
+                txtAlteracao.Text = dgvAlunos.CurrentRow.Cells[0].Value.ToString();
+            }
         }
     }
 }

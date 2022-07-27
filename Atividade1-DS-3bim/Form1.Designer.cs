@@ -35,15 +35,15 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnRemover = new System.Windows.Forms.Button();
             this.dgvAlunos = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAlteracao = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnTodos = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +89,6 @@
             this.btnIncluir.TabIndex = 4;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
-            this.btnIncluir.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnRemover
             // 
@@ -103,24 +102,17 @@
             // dgvAlunos
             // 
             this.dgvAlunos.AllowUserToAddRows = false;
+            this.dgvAlunos.AllowUserToDeleteRows = false;
+            this.dgvAlunos.AllowUserToOrderColumns = true;
             this.dgvAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlunos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.Curso});
+            this.Column1,
+            this.Column2});
             this.dgvAlunos.Location = new System.Drawing.Point(80, 199);
             this.dgvAlunos.Name = "dgvAlunos";
+            this.dgvAlunos.ReadOnly = true;
             this.dgvAlunos.Size = new System.Drawing.Size(454, 167);
             this.dgvAlunos.TabIndex = 6;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Curso
-            // 
-            this.Curso.HeaderText = "Curso";
-            this.Curso.Name = "Curso";
             // 
             // label3
             // 
@@ -132,12 +124,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Alterar Nome:";
             // 
-            // textBox1
+            // txtAlteracao
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 401);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtAlteracao.Location = new System.Drawing.Point(172, 401);
+            this.txtAlteracao.Name = "txtAlteracao";
+            this.txtAlteracao.Size = new System.Drawing.Size(252, 20);
+            this.txtAlteracao.TabIndex = 8;
             // 
             // btnAlterar
             // 
@@ -156,6 +148,7 @@
             this.btnFechar.TabIndex = 10;
             this.btnFechar.Text = "Fechar Sistema";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnTodos
             // 
@@ -184,6 +177,18 @@
             this.lblTotal.Size = new System.Drawing.Size(0, 13);
             this.lblTotal.TabIndex = 13;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nome";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Curso";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,7 +199,7 @@
             this.Controls.Add(this.btnTodos);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAlteracao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvAlunos);
             this.Controls.Add(this.btnRemover);
@@ -220,15 +225,15 @@
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.DataGridView dgvAlunos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAlteracao;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnTodos;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
 
